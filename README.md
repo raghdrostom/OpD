@@ -1,5 +1,4 @@
 # OpD
 
-hi
-
-test 2 
+Current status: 
+Primer3 input + run through R
