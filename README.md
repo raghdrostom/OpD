@@ -1,5 +1,8 @@
 # OpD
 
-hi
+This repository includes:
 
-test 2 
+1. primer_pipeline.r 
+
+2. primer3tofasta.py 
+
