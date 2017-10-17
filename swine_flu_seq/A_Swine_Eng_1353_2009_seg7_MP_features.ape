@@ -1,0 +1,158 @@
+LOCUS       A_Swine_Eng_1353         982 bp ds-DNA     linear       01-AUG-2016
+DEFINITION  Influenza A virus (A/swine/England/1353/2009(H1N1)) segment 7
+            matrix protein 2 (M2) and matrix protein 1 (M1) genes, complete
+            cds.
+ACCESSION   KR701100
+VERSION     KR701100.1  GI:827499512
+KEYWORDS    .
+SOURCE      Influenza A virus (A/swine/England/1353/2009(H1N1))
+  ORGANISM  Influenza A virus (A/swine/England/1353/2009(H1N1)) Viruses; ssRNA
+            viruses; ssRNA negative-strand viruses; Orthomyxoviridae;
+            Influenzavirus A.
+REFERENCE   1  (bases 1 to 982)
+  AUTHORS   Watson,S.J., Langat,P., Reid,S.M., Lam,T.T., Cotten,M., Kelly,M.,
+            Van Reeth,K., Qiu,Y., Simon,G., Bonin,E., Foni,E., Chiapponi,C.,
+            Larsen,L., Hjulsager,C., Markowska-Daniel,I., Urbaniak,K.,
+            Durrwald,R., Schlegel,M., Huovilainen,A., Davidson,I., Dan,A.,
+            Loeffen,W., Edwards,S., Bublot,M., Vila,T., Maldonado,J., Valls,L.,
+            Brown,I.H., Pybus,O.G. and Kellam,P.
+  CONSRTM   ESNIP3 Consortium
+  TITLE     Molecular Epidemiology and Evolution of Influenza Viruses
+            Circulating within European Swine between 2009 and 2013
+  JOURNAL   J. Virol. (2015) In press
+   PUBMED   26202246
+  REMARK    Publication Status: Available-Online prior to print
+REFERENCE   2  (bases 1 to 982)
+  AUTHORS   Watson,S.J., Langat,P., Reid,S.M., Tsan-Yuk Lam,T., Cotten,M.,
+            Kelly,M., van Reeth,K., Qiu,Y., Simon,G., Bonin,E., Foni,E.,
+            Chiapponi,C., Larsen,L., Hjulsager,C., Markowska-Daniel,I.,
+            Urbaniak,K., Durrwald,R., Schlegel,M., Huovilainen,A., Davidson,I.,
+            Dan,A., Loeffen,W., Edwards,S., Bublot,M., Vila,T., Maldonado,J.,
+            Valls,L., Brown,I.H., Pybus,O.G. and Kellam,P.
+  CONSRTM   ESNIP3 Consortium
+  TITLE     Direct Submission
+  JOURNAL   Submitted (11-MAY-2015) Virus Genomics, Wellcome Trust Sanger
+            Institute, Wellcome Trust Genome Campus, Hinxton, Cambridgeshire
+            CB10 1SA, United Kingdom
+COMMENT     GenBank Accession Numbers KR701094-KR701101 represent sequences
+            from the 8 segments of Influenza A virus
+            (A/swine/England/1353/2009(H1N1)).  ##Assembly-Data-START##
+            Assembly Method       :: IVA v. 0.8.1; SMALT v. 0.7.4 Sequencing
+            Technology :: 454; Illumina ##Assembly-Data-END##
+COMMENT     
+COMMENT     ApEinfo:methylated:1
+FEATURES             Location/Qualifiers
+     source          1..982
+                     /organism="Influenza A virus
+                     (A/swine/England/1353/2009(H1N1))"
+                     /mol_type="viral cRNA"
+                     /strain="A/swine/England/1353/2009"
+                     /serotype="H1N1"
+                     /host="Sus scrofa"
+                     /db_xref="taxon:1654135"
+                     /segment="7"
+                     /country="United Kingdom"
+                     /collection_date="01-Dec-2009"
+                     /label=source:Influenza A virus (A/swine/England/1353/200
+                     /ApEinfo_fwdcolor=pink
+                     /ApEinfo_revcolor=pink
+                     /ApEinfo_graphicformat=arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0
+     gene            1..982
+                     /gene="M2"
+                     /label=M2
+                     /ApEinfo_fwdcolor=pink
+                     /ApEinfo_revcolor=pink
+                     /ApEinfo_graphicformat=arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0
+     gene            1..759
+                     /gene="M1"
+                     /label=M1
+                     /ApEinfo_fwdcolor=pink
+                     /ApEinfo_revcolor=pink
+                     /ApEinfo_graphicformat=arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0
+     CDS             1..759
+                     /gene="M1"
+                     /codon_start=1
+                     /product="matrix protein 1"
+                     /protein_id="AKJ82487.1"
+                     /db_xref="GI:827499513"
+                     /translation="MSLLTEVETYVLSIIPSGPLKAEIAQRLESVFAGKNTDLEALME
+                     WLKTRPILSPLTKGILGFVFTLTVPSERGLQRRRFVQNALNGNGDPNNMDRAVKLYKK
+                     LKREITFHGAKEVSLSYSTGALASCMGLIYNRMGTVTTEAAFGLVCATCEQIADSQHR
+                     SHRQMATTTNPLIRHENRMVLASTTAKAMEQMAGSSEQAAEAMEVANQTRQMVHAMRT
+                     IGTHPSSSAGLKDDLLENLQAYQKRMGVQMQRFK"
+                     /label=matrix protein 1
+                     /ApEinfo_fwdcolor=#fe27e7
+                     /ApEinfo_revcolor=#fe27e7
+                     /ApEinfo_graphicformat=arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0
+     CDS             join(1..26,715..982)
+                     /gene="M2"
+                     /codon_start=1
+                     /product="matrix protein 2"
+                     /protein_id="AKJ82488.1"
+                     /db_xref="GI:827499514"
+                     /translation="MSLLTEVETPTRSEWECRCSDSSDPLVIAANIIGILHLILWITD
+                     RLFFKCIYRRFKYGLKRGPSTEGVPESMREEYQQEQQSAVDVDDGHFVNIELE"
+                     /label=matrix protein 2
+                     /ApEinfo_fwdcolor=#0bfe0d
+                     /ApEinfo_revcolor=#0bfe0d
+                     /ApEinfo_graphicformat=arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0
+     misc_feature    715..759
+                     /label=Overlap of 3' end of M1 with second exon of M2
+                     /ApEinfo_fwdcolor=cyan
+                     /ApEinfo_revcolor=green
+                     /ApEinfo_graphicformat=arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0
+     misc_feature    764..766
+                     /label=L26
+                     /ApEinfo_fwdcolor=#ff0f1a
+                     /ApEinfo_revcolor=green
+                     /ApEinfo_graphicformat=arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0
+     misc_feature    767..769
+                     /label=V27
+                     /ApEinfo_fwdcolor=#1a2bff
+                     /ApEinfo_revcolor=green
+                     /ApEinfo_graphicformat=arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0
+     misc_feature    776..778
+                     /label=A30
+                     /ApEinfo_fwdcolor=#ff0505
+                     /ApEinfo_revcolor=#ff0505
+                     /ApEinfo_graphicformat=arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0
+     misc_feature    779..781
+                     /label=N31 (Amantadine resistant)
+                     /ApEinfo_fwdcolor=#0522ff
+                     /ApEinfo_revcolor=green
+                     /ApEinfo_graphicformat=arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0
+     misc_feature    788..790
+                     /label=G34
+                     /ApEinfo_fwdcolor=#ff0204
+                     /ApEinfo_revcolor=#ff0204
+                     /ApEinfo_graphicformat=arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0
+ORIGIN
+        1 atgagtcttc taaccgaggt cgaaacgtac gttctttcta tcatcccatc aggccccctc
+       61 aaagccgaga tcgcgcagag actggaaagt gtctttgcag gaaagaacac agatcttgag
+      121 gctctcatgg aatggctaaa gacaagacca atcttgtcac ctctgactaa gggaatttta
+      181 ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+      241 caaaatgccc taaatgggaa tggggacccg aacaacatgg atagagcagt taaactatac
+      301 aagaagctca aaagagaaat aacgttccat ggagccaagg aggtgtcact aagctattca
+      361 actggtgcac ttgccagttg catgggcctc atatacaaca ggatgggaac agtgaccaca
+      421 gaagctgctt ttggtctagt gtgtgccact tgtgaacaga ttgctgattc acagcatcgg
+      481 tctcacagac aaatggctac taccaccaat ccactaatca ggcatgaaaa cagaatggtg
+      541 ctggctagca ctacagcaaa ggctatggaa cagatggctg gatcgagtga acaggcagca
+      601 gaggccatgg aggttgctaa tcagactagg cagatggtac atgcaatgag aactattggg
+      661 actcatccta gctccagtgc tggtctgaaa gatgaccttc ttgaaaattt gcaggcctac
+      721 cagaagcgaa tgggagtgca gatgcagcga ttcaagtgat cctctcgtca ttgcagcaaa
+      781 tatcattggg atcttgcacc tgatattgtg gattactgat cgtctttttt tcaaatgtat
+      841 ttatcgtcgc tttaaatacg gtttgaaaag agggccttct acggaaggag tgcctgagtc
+      901 catgagggaa gaatatcaac aggaacagca gagtgctgtg gatgttgacg atggtcattt
+      961 tgtcaacata gagctagagt aa   
+//
