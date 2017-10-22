@@ -2,8 +2,6 @@
 Laura 4th October 2017
 
 The goal of this script is to read in the output from primer3, and create a fasta file of primer sequences that can be read into primer-lint.
-Unfortunately the gap and headers between left & right primers makes things a little tricky 
-So this code is bad...
 
 """
 
