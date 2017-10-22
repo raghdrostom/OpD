@@ -6,3 +6,6 @@ This repository includes:
 
 2. primer3tofasta.py 
 
+=======
+Current status: 
+Primer3 input + run through R
