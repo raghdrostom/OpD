@@ -7,13 +7,18 @@
 # First edits: Andre Zylstra 19/09/17
 # Edits to clean up the primer3 output file to make importing to dataframe easy: Andre Zylstra 28/10/17
 # Edits to run oligoscreen, read in output: Andre Zylstra 31/10/17
+# Now outputs left primers with the 5` t7 promoter included for oligoscreen, 
+# also cleaned up a few messy for loops by using sapply instead, produces AT / GC counts for different ends: Andre Zylstra 11/11/17
 
 
 # Library for reading fasta file
 library(seqinr)
 
+# library required for assessing GC / AT content
+library(stringr)
 
-# read in user specified FASTA file
+
+# read in user-specified FASTA file
 genome_path <- file.choose()
 genome_seq <- read.fasta(file=genome_path, seqtype='DNA', as.string=T, forceDNAtolower=F)
 genome_name <- attributes(genome_seq[[1]])$name
@@ -68,18 +73,10 @@ r_primers <- cbind(r_primers[,10], r_primers[,3:9], stringsAsFactors=F)
 colnames(r_primers) <- c(r_primer_header[8], r_primer_header[1:7])
 
 # Create sequence list files for running RNAstructure program 'oligoscreen' to assess self-complementarity, hairpins etc.
-l_primer_list <- NULL
-r_primer_list <- NULL
 
-for (i in 1:length(l_primers[,1])) {
-   # l_primer_list <- append(l_primer_list, paste0('>', i, '_LEFT_PRIMER'))
-  l_primer_list <- append(l_primer_list, l_primers$seq[i])
-}
-
-for (i in 1:length(r_primers[,1])) {
-  # r_primer_list <- append(r_primer_list, paste0('>', i, '_RIGHT_PRIMER'))
-  r_primer_list <- append(r_primer_list, r_primers$seq[i])
-}
+# L primers need to be modelled including the 5` PCR extension (T7 promoter etc)
+l_primer_list <- sapply(l_primers[,1], FUN=function(temp) paste0('AATTCTAATACGACTCACTATAGGGAGAAGG', temp), USE.NAMES=F)
+r_primer_list <- r_primers[,1]
 
 l_primer_listfile <- paste0(genome_name, '_left_primer_list.txt')
 r_primer_listfile <- paste0(genome_name, '_right_primer_list.txt')
@@ -89,14 +86,14 @@ write(r_primer_list, r_primer_listfile)
 
 #############################################################################################################################
 
-# Sorry, this is a messy hack which we'll need to find a good way round eventually.
+# Sorry, this is a messy hack which we'll probably want to find a good way round eventually.
 # It's required to point oligoscreen to the correct thermodynamic parameters
 # Just select any file in the .../RNAstructure/data_tables folder in the file select dialog and it SHOULD work ok
 Sys.setenv(DATAPATH = dirname(file.choose()))
 
 #############################################################################################################################
 
-# Call oligoscreen
+# Call oligoscreen - takes a few secs to a minute depending on computer / no of primers
 l_primer_oscreen_output <- paste0(genome_name, '_left_oligoscreen.txt')
 l_primer_oscreen_cmd <- paste('../oligoscreen', l_primer_listfile, l_primer_oscreen_output, '--DNA -t 314.15', sep=' ')
 system(l_primer_oscreen_cmd, wait=T)
@@ -108,3 +105,23 @@ system(r_primer_oscreen_cmd, wait=T)
 # import the oligoscreen results to existing dataframes
 l_primers <- cbind(l_primers, read.table(l_primer_oscreen_output, header=T)[,2:6], stringsAsFactors=F)
 r_primers <- cbind(r_primers, read.table(r_primer_oscreen_output, header=T)[,2:6], stringsAsFactors=F)
+
+# Evaluate 5` GC content
+source('count_GC_5prime.r')
+
+l_primer_5prime_GC <- sapply(l_primers[,1], count_GC_5prime, USE.NAMES=F)
+r_primer_5prime_GC <- sapply(r_primers[,1], count_GC_5prime, USE.NAMES=F)
+
+# Bind to existing dataframe
+l_primers <- cbind(l_primers, l_primer_5prime_GC)
+r_primers <- cbind(r_primers, r_primer_5prime_GC)
+
+# Evaluate 3` AT content
+source('count_AT_3prime.r')
+
+l_primer_3prime_AT <- sapply(l_primers[,1], count_AT_3prime, USE.NAMES=F)
+r_primer_3prime_AT <- sapply(r_primers[,1], count_AT_3prime, USE.NAMES=F)
+
+# Bind to existing dataframe
+l_primers <- cbind(l_primers, l_primer_3prime_AT)
+r_primers <- cbind(r_primers, r_primer_3prime_AT)
